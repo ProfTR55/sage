@@ -514,8 +514,7 @@ class GenericGraph(GenericGraph_pyx):
         from sage.graphs.base.static_sparse_backend import StaticSparseBackend
         ib = StaticSparseBackend(self,
                                  loops=self.allows_loops(),
-                                 multiedges=self.allows_multiple_edges(),
-                                 sort=not immutable)
+                                 multiedges=self.allows_multiple_edges())
         self._backend = ib
         self._immutable = True
 
