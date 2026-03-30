@@ -500,6 +500,25 @@ class GenericGraph(GenericGraph_pyx):
         """
         self._latex_opts = None
 
+    def _finalize_static_sparse_backend(self, data_structure, immutable):
+        """
+        Finalize construction with a static sparse backend when requested.
+
+        This preserves the existing constructor behavior where a graph may be
+        built first with a mutable backend and then converted to
+        ``StaticSparseBackend``.
+        """
+        if data_structure != "static_sparse":
+            return
+
+        from sage.graphs.base.static_sparse_backend import StaticSparseBackend
+        ib = StaticSparseBackend(self,
+                                 loops=self.allows_loops(),
+                                 multiedges=self.allows_multiple_edges(),
+                                 sort=not immutable)
+        self._backend = ib
+        self._immutable = True
+
     def __setstate__(self, state):
         r"""
         Set the state from a pickle dict.

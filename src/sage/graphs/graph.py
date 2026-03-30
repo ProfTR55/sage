@@ -1281,13 +1281,7 @@ class Graph(GenericGraph):
         if format != 'Graph' or name is not None:
             self.name(name)
 
-        if data_structure == "static_sparse":
-            from sage.graphs.base.static_sparse_backend import StaticSparseBackend
-            ib = StaticSparseBackend(self,
-                                     loops=self.allows_loops(),
-                                     multiedges=self.allows_multiple_edges())
-            self._backend = ib
-            self._immutable = True
+        self._finalize_static_sparse_backend(data_structure, immutable)
 
     # Formats
 
