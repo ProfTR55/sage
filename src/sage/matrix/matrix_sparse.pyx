@@ -1086,6 +1086,7 @@ cdef class Matrix_sparse(matrix.Matrix):
             return False
         cdef dict D = self._dict()
         zero = self.base_ring().zero()
+        cdef Py_ssize_t i, j
         for (i, j), v in D.items():
             if i != j and D.get((j, i), zero) != v:
                 return False
