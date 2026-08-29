@@ -1720,7 +1720,7 @@ def minimal_separators(G, forbidden_vertices=None):
                         to_explore.append(frozenset(nh))
 
 
-@rename_keyword(deprecation=99999, use_edge_labels='by_weight')
+@rename_keyword(deprecation=42740, use_edge_labels='by_weight')
 @rename_keyword(deprecation=42652, implementation='algorithm')
 def edge_connectivity(G,
                       value_only=True,
@@ -1945,7 +1945,7 @@ def edge_connectivity(G,
         sage: edge_connectivity(G, use_edge_labels=True)                                # needs sage.numerical.mip
         doctest:warning...
         DeprecationWarning: use the option 'by_weight' instead of 'use_edge_labels'
-        See https://github.com/sagemath/sage/issues/99999 for details.
+        See https://github.com/sagemath/sage/issues/42740 for details.
         3.0
 
     TESTS:
