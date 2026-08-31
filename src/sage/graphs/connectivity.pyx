@@ -1986,8 +1986,8 @@ def edge_connectivity(G,
     # function implies by_weight=True, and not every algorithm can be used
     # with weights.
     by_weight, weight_function = G._get_weight_function(by_weight=by_weight,
-                                                       weight_function=weight_function,
-                                                       check_weight=check_weight)
+                                                        weight_function=weight_function,
+                                                        check_weight=check_weight)
 
     if algorithm is None:
         if g.is_directed() and value_only and not by_weight:
