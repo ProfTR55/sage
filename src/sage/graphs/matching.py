@@ -1074,7 +1074,7 @@ def is_matching_covered(G, matching=None, algorithm='Edmonds', coNP_certificate=
     return (True, None) if coNP_certificate else True
 
 
-@rename_keyword(deprecation=99999, use_edge_labels='by_weight')
+@rename_keyword(deprecation=42750, use_edge_labels='by_weight')
 def matching(G, value_only=False, algorithm='Edmonds',
              by_weight=False, weight_function=None, check_weight=True,
              solver=None, verbose=0,
@@ -1207,7 +1207,7 @@ def matching(G, value_only=False, algorithm='Edmonds',
         sage: g.matching(use_edge_labels=True)                                      # needs sage.networkx
         doctest:warning...
         DeprecationWarning: use the option 'by_weight' instead of 'use_edge_labels'
-        See https://github.com/sagemath/sage/issues/99999 for details.
+        See https://github.com/sagemath/sage/issues/42750 for details.
         [(1, 2, 999)]
 
     With loops and multiedges::

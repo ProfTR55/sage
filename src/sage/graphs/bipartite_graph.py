@@ -2375,7 +2375,7 @@ class BipartiteGraph(Graph):
             return matrix(len(self.right), len(self.left), D, sparse=sparse, **kwds)
         return matrix(base_ring, len(self.right), len(self.left), D, sparse=sparse, **kwds)
 
-    @rename_keyword(deprecation=99999, use_edge_labels='by_weight')
+    @rename_keyword(deprecation=42750, use_edge_labels='by_weight')
     def matching(self, value_only=False, algorithm=None,
                  by_weight=False, weight_function=None, check_weight=True,
                  solver=None, verbose=0,
