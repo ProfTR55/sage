@@ -1095,7 +1095,7 @@ def random_orientation(G):
     return _initialize_digraph(G, edges, name=f"Random orientation of {G.name()}")
 
 
-@rename_keyword(deprecation=99999, use_edge_labels='by_weight')
+@rename_keyword(deprecation=42760, use_edge_labels='by_weight')
 def minimum_outdegree_orientation(G, by_weight=False, weight_function=None,
                                   check_weight=True, solver=None, verbose=0,
                                   *, integrality_tolerance=1e-3):
@@ -1182,7 +1182,7 @@ def minimum_outdegree_orientation(G, by_weight=False, weight_function=None,
         sage: o = g.minimum_outdegree_orientation(use_edge_labels=True)                 # needs sage.numerical.mip
         doctest:warning...
         DeprecationWarning: use the option 'by_weight' instead of 'use_edge_labels'
-        See https://github.com/sagemath/sage/issues/99999 for details.
+        See https://github.com/sagemath/sage/issues/42760 for details.
         sage: max(o.out_degree())                                                       # needs sage.numerical.mip
         2
 
